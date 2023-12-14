@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/1621849046116-removebg-preview.png">
+    <title>Soch</title>
+    <style>
+            .error {
+                   color: red;
+                   /* max-width: 100%; */
+                  width: 300px;
+                  height: 20px;
+                  padding-left: 10px;
+               }
+           </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="number" placeholder="Phone No " />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="Login" class="btn solid" />
+            
+          </form>
+
+
+
+          <form action="#" class="sign-up-form">
+
+            <h2 class="title">New User</h2>
+           
+
+              <div class="FullName">
+
+                <div class="input-field input-field1 FN">
+                  <i class="fas fa-user"></i>
+                  <input type="text" placeholder="First Name" />                
+                </div>
+
+                <div class="input-field input-field1 FN">
+                  <i class="fas fa-user"></i>
+                  <input type="text" placeholder="Last Name" />
+
+                </div>                
+               
+              </div>             
+           
+
+            <div class="input-field input-field2">
+              <i class="fas fa-envelope"></i>
+              <!-- <input type="email" placeholder="Email" /> -->
+
+              <input type="text" placeholder="Email" id="email" name="email" onblur="validateEmail()">
+        <span id="emailError" class="error"></span>
+
+
+
+            </div>
+
+            
+            <div class="PPN">
+
+              <div class="input-field input-field1 ">
+                <i class="fas fa-user"></i>
+                <input type="number" placeholder="Phone Number" />  
+                
+                
+                <!-- <input type="text" placeholder="Phone Number" id="phoneNumber" name="phoneNumber" onblur="validatePhone()">
+        <span id="phoneError" class="error"></span>               -->
+              </div>
+
+              <div class="input-field ">
+                <i class="fas fa-user"></i>
+                <!-- <input type="number" placeholder="Age" /> -->
+
+                <input type="text" placeholder="Age" id="age" name="age" onblur="validateAge()">
+        <span id="ageError" class="error"></span>
+
+              </div>                
+             
+            </div> 
+            <div class="radio1">
+              <Label>Gender : </Label>
+              <label>Male <input type="radio" name="Gender" value="Male"/></label>
+              <label>Female <input type="radio" name="Gender" value="Female"/></label>
+              <label>Other <input type="radio" name="Gender" value="Other"/></label>
+            </div>       
+
+            <div class="SDT">
+
+              <div class="input-field ">
+                <i class="fas fa-user"></i>
+                <input type="number" placeholder="Pincode" />
+
+                
+
+              </div>      
+              <div class="input-field ">
+                <i class="fas fa-user"></i>
+                <input type="Text" placeholder="State" />                
+              </div>
+
+              
+                            
+             
+            </div> 
+
+
+            <div class="ES">
+
+              <div class="input-field ">
+                <i class="fas fa-user"></i>
+                <input type="Text" placeholder="District" />
+              </div>  
+
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="Text" placeholder="Taluka" />                
+              </div>         
+
+            
+
+            </div>
+
+           
+
+            <div class="new"> 
+
+              <div class="Education ES1 ">
+                <select class="input-field">
+                 
+                  <option selected disabled> &nbsp&nbsp Qualification</option>
+                  <option value="1">10th</option>
+                  <option value="2">12th</option>
+                  <option value="3">Diploma</option>
+                  <option value="4">Graduation</option>
+                  <option value="5">Post Graduation</option>
+                  <option value="6">Other</option>
+                </select>
+              </div>            
+
+            <div class="Ser ES1"> 
+              <select class="input-field">
+                
+                <option selected disabled> &nbsp&nbsp Services</option>
+                <option value="1">Job</option>
+                <option value="2">Placment</option>
+                <option value="3">Govt Schemes </option>
+                <option value="4">Retail Product</option>
+  
+              </select>
+            </div>
+
+            </div>
+            
+          </form>
+
+        </div>
+      </div>
+
+
+      
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>New here ?</h3>
+            <p>
+              If you are new user then click here to register anf fill you information
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              Register
+            </button>
+          </div>
+          <img src="img/1621849046116-removebg-preview.png" class="image" alt="" />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>One of us ?</h3>
+            <p>
+              If your all the information is true then click to submit button to successfully registered
+            </p>
+            <button class="btn transparent">
+              <a href="index1.html" class="submit1">Submit</a>
+            </button>
+            
+          </div>
+          <img src="img/1621849046116-removebg-preview.png" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+
+
+
+
+
+
+
+
+    <script>
+        
+      function validateEmail() {
+          var emailInput = document.getElementById('email').value;
+          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (emailRegex.test(emailInput)) {
+              document.getElementById('emailError').innerHTML = "";
+          } else {
+              document.getElementById('emailError').innerHTML = "Please enter a valid email address.";
+          }
+      }
+
+      function validatePhone() {
+          var phoneNumberInput = document.getElementById('phoneNumber').value;
+          var phoneRegex = /^[0-9]{10}$/;
+          if (phoneRegex.test(phoneNumberInput)) {
+              document.getElementById('phoneError').innerHTML = "";
+          } else {
+              document.getElementById('phoneError').innerHTML = "Please enter a valid 10-digit phone number.";
+          }
+      }
+
+      function validateAge() {
+          var ageInput = document.getElementById('age').value;
+          var positiveIntegerRegex = /^\d+$/;
+          if (positiveIntegerRegex.test(ageInput)) {
+              var age = parseInt(ageInput, 10);
+              if (age >= 1 && age <= 120) {
+                  document.getElementById('ageError').innerHTML = "";
+              } else {
+                  document.getElementById('ageError').innerHTML = "Please enter a valid age between 1 and 120.";
+              }
+          } else {
+              document.getElementById('ageError').innerHTML = "Please enter a valid age.";
+          }
+      }
+  </script>
+  </body>
+</html>
